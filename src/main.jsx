@@ -10,6 +10,6 @@ ReactDOM.createRoot( document.getElementById('root')).render(
 
     <React.StrictMode>
       
-        <FirstApp/>
+        <FirstApp title="Hola soy el Han" subTitle={ 123 }/>
     </React.StrictMode>
 );     

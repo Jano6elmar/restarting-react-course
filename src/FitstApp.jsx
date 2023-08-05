@@ -8,8 +8,9 @@ const newMessage = {
     title: 'Ale' 
 };
 
-export const FirstApp = () => {
+export const FirstApp = ({title, subTitle}) => {
 
+  //console.log(props)
     // const F1 = () => {  //dentro o fuera del functional component va a funcionar igual
 
     //     return 'Ale Belmar'
@@ -18,9 +19,9 @@ export const FirstApp = () => {
   return (
     <>
     <h1>Hola Mundo</h1>
-    <h3> Alejandro</h3>
+    <h3> { title }</h3>
         {/* <code> { JSON.stringify(newMessage) } </code> */}
-        <p>Subtítulo</p>
+        <p>{ subTitle + 1}</p>
     </>       
   )
 }
