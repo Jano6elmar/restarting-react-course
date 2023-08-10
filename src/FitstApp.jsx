@@ -1,3 +1,4 @@
+import  PropTypes from 'prop-types';
 // const F1 = () => {
 
 // return 'Ale Belmar'
@@ -8,20 +9,37 @@ const newMessage = {
     title: 'Ale' 
 };
 
-export const FirstApp = ({title, subTitle}) => {
+export const FirstApp = ({title, subTitle, name,}) => {
 
   //console.log(props)
     // const F1 = () => {  //dentro o fuera del functional component va a funcionar igual
-
     //     return 'Ale Belmar'
     //     }
 
-  return (
+    /* if( !title) { esto es para obligar  a mandar el titulo
+      pero se puede hacer con propTypes en React
+      throw new Error('el titulo no existe');
+    } */
+    
+    return (
     <>
-    <h1>Hola Mundo</h1>
-    <h3> { title }</h3>
+    {/* <h1>Hola Mundo</h1> */}
+    <h1> { title }</h1>
         {/* <code> { JSON.stringify(newMessage) } </code> */}
-        <p>{ subTitle + 1}</p>
+        <p>{ subTitle }</p>
+        <p>{ name }</p>
     </>       
   )
+}
+//para definir los tipos de las properties
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired, 
+  subTitle: PropTypes.number.isRequired,
+  
+}
+//estos entran antes que los proptypes
+FirstApp.defaultProps = {
+  title : 'No hay título',
+  subTitle : 'No hay subtítulo',
+  name: 'Alexander'
 }
